@@ -66,7 +66,10 @@ class EggTimerFragment : Fragment() {
                 channelName,
                 // TODO: Step 2.4 change importance - High is heads up and sound, default is sound, low is in status bar
                 NotificationManager.IMPORTANCE_HIGH
-            )
+            ).apply {
+                //removes badge when app has a notification (dot in the right corner)
+                setShowBadge(false)
+            }
 
             notificationChannel.enableLights(true)
             notificationChannel.lightColor = Color.RED
